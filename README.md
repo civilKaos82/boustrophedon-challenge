@@ -78,11 +78,28 @@ really interesting!
 ## Stretch Release Ideas
 
 1. Add color configuration to a `config.js` file
-1. If you get idea #1 working, see if the user has a `~/.boustrc` file. By Unix
+2. If you get idea #1 working, see if the user has a `~/.boustrc` file. By Unix
   convention, many custom configuration data are specified in `.*rc` files in
   the user's home directory (e.g. `.bashrc`, `.zshrc`, `.xinitrc`, etc.). Make
   `boustcat.js` respect a config found there by default.
-1. Find a way to bring reversed letterforms to the console! It didn't seem
+3. Research a way to make a script executable in unix such that `./nodecat file` works
+4. Your implementation might be using nested callbacks. They will look something like:
+```node
+fs.readFile(......() => {
+  () => {
+     // and more?
+        // and more?
+          // and more?
+  }
+}
+```
+Programmers call this the "pyramid of death" or "callback hell."
+If you're not sure whether your code uses this approach applies, ask your instructor.
+If so, research Node's [Stream][] API and see if you can refactor to use them. Streams
+are an excellent way of conceiving of this app: We stream data from the file system,
+through a transformer function, and put it in the "display" stream. Use the [Stream-Handbook][]
+to get you going.
+5. Find a way to bring reversed letterforms to the console! It didn't seem
    possible to the humble author of this idea, but maybe you can figure out
    an approach!
    
@@ -102,3 +119,5 @@ using. Build your own preferences!
 
 [Boustrophedon]: https://en.wikipedia.org/wiki/Boustrophedon
 [colors]: https://www.npmjs.com/package/colors
+[Stream]: https://nodejs.org/api/stream.html
+[Stream-Handbook]: https://github.com/substack/stream-handbook
