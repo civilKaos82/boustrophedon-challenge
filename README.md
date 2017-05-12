@@ -77,7 +77,8 @@ really interesting!
 
 ## Stretch Release Ideas
 
-1. Add color configuration to a `config.js` file
+1. Add color configuration to a `config.js` file. Sharing data between files
+   in Node is covered in the [Node docs](https://nodejs.org/api/modules.html)
 2. If you get idea #1 working, see if the user has a `~/.boustrc` file. By Unix
   convention, many custom configuration data are specified in `.*rc` files in
   the user's home directory (e.g. `.bashrc`, `.zshrc`, `.xinitrc`, etc.). Make
